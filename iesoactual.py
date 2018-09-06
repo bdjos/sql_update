@@ -54,7 +54,7 @@ def call_wget():
     table = 'IESOACTUAL'
     dtypes = [DateTime(), Float()]
     db = pandasdb.pandasdb(database, table)
-    db.pd_to_db(dtypes, df, if_exists='fail')
+    db.pd_to_db(dtypes, df, if_exists='append')
    
 schedule.every().hour.do(call_wget())
 while 1:
